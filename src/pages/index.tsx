@@ -1,25 +1,30 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import { EbookForm } from "../components/EbookForm";
+import { StaticImage } from "gatsby-plugin-image"
 
 const IndexPage: React.FC<PageProps> = () => {
   const [submitted, setSubmitted] = React.useState(false);
 
   return (
-    <main className="max-w-4xl mx-auto p-6">
-      <header className="text-center mb-12">
-        <h1 className="text-3xl font-bold mb-4">
-          Conquiste sua próxima vaga de emprego em tecnologia
-        </h1>
-        <p className="text-lg mb-6">
-          Descubra os segredos para montar um currículo atrativo, se destacar no LinkedIn e brilhar em entrevistas.
-        </p>
-        <button
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-          aria-label="Solicitar o e-book gratuito"
-        >
-          Quero meu e-book agora
-        </button>
+    <main className="bg-gray-950 min-h-screen">
+      <header className="flex justify-center h-[90vh]">
+        <StaticImage
+          src="../images/hero.jpg"
+          alt="Muitas pessoas em um evento de tecnologia"
+          placeholder="blurred"
+          layout="fullWidth"
+          className="inset-0 w-full h-full relative object-cover opacity-60 grayscale-100"
+        />
+        
+        <div className="absolute text-center mt-12 md:mt-28">
+          <h1 className="text-white rounded text-2xl bg-black md:text-4xl font-bold p-2">
+            Conquiste sua próxima vaga
+          </h1>
+          <h3 className="text-white rounded text-lg bg-purple-800 md:text-2xl p-2">
+            Descubra como otimizar seu currículo e brilhar nas entrevistas.
+          </h3>
+        </div>
       </header>
 
       <section className="mb-12">
