@@ -1,5 +1,8 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
+import { Formik, Form, Field, ErrorMessage, FieldProps } from "formik"
+import * as Yup from "yup"
+import InputMask from "react-input-mask"
 
 const pageStyles = {
   color: "#232129",
@@ -37,6 +40,12 @@ const buttonStyles = {
   marginBottom: 48,
 }
 
+const validationSchema = Yup.object({
+  name: Yup.string().required("Nome obrigatório"),
+  email: Yup.string().email("Email inválido").required("Email obrigatório"),
+  phone: Yup.string().required("WhatsApp obrigatório"),
+})
+
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <main style={pageStyles}>
@@ -73,13 +82,46 @@ const IndexPage: React.FC<PageProps> = () => {
 
       <div>
         <h1>Garanta seu acesso exclusivo ao e-book</h1>
-        <input type="text" aria-label="Nome completo" />
-        <input type="email" aria-label="E-mail" />
-        <input type="number" aria-label="WhatsApp" />
+       <Formik
+          initialValues={{ name: "", email: "", phone: "" }}
+          validationSchema={validationSchema}
+          onSubmit={(values) => {
+            // handle form submission here
+            alert(JSON.stringify(values, null, 2))
+          }}
+          validateOnChange={false}
+        >
+          <Form>
+            <label>
+              Name
+              <Field type="text" name="name" id="name" />
+              <ErrorMessage name="name" component="span" />
+            </label>
+            <label>
+              Email
+              <Field type="email" name="email" id="email" />
+              <ErrorMessage name="email" component="span" />
+            </label>
+            <label>
+              WhatsApp
+              <Field name="phone">
+                {({ field }: FieldProps) => (
+                  <InputMask
+                    {...field}
+                    mask="(99) 99999-9999"
+                    placeholder="(99) 99999-9999"
+                    id="phone"
+                    type="text"
+                  />
+                )}
+              </Field>
+            </label>
+            <button style={buttonStyles} type="submit">
+              Quero meu e-book agora
+            </button>
+          </Form>
+        </Formik>
         
-        <button style={buttonStyles}>
-          Quero meu e-book agora
-        </button>
       </div>
 
       <div>
