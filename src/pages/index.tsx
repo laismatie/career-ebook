@@ -1,138 +1,66 @@
-import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
-import { Formik, Form, Field, ErrorMessage, FieldProps } from "formik"
-import * as Yup from "yup"
-import InputMask from "react-input-mask"
-
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
-
-const doclistStyles = {
-  paddingLeft: 0,
-}
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
-}
-
-const buttonStyles = {
-  marginBottom: 48,
-}
-
-const validationSchema = Yup.object({
-  name: Yup.string().required("Nome obrigatório"),
-  email: Yup.string().email("Email inválido").required("Email obrigatório"),
-  phone: Yup.string().required("WhatsApp obrigatório"),
-})
+import * as React from "react";
+import type { HeadFC, PageProps } from "gatsby";
+import { EbookForm } from "../components/EbookForm";
 
 const IndexPage: React.FC<PageProps> = () => {
+  const [submitted, setSubmitted] = React.useState(false);
+
   return (
-    <main style={pageStyles}>
-      <div>
-        <h1 style={headingStyles}>
+    <main className="max-w-4xl mx-auto p-6">
+      <header className="text-center mb-12">
+        <h1 className="text-3xl font-bold mb-4">
           Conquiste sua próxima vaga de emprego em tecnologia
         </h1>
-        <h3 style={headingAccentStyles}>Descubra os segredos para montar um currículo atrativo, se destacar no LinkedIn e brilhar em entrevistas.</h3>
-        <button style={buttonStyles}>
+        <p className="text-lg mb-6">
+          Descubra os segredos para montar um currículo atrativo, se destacar no LinkedIn e brilhar em entrevistas.
+        </p>
+        <button
+          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          aria-label="Solicitar o e-book gratuito"
+        >
           Quero meu e-book agora
         </button>
-      </div>
+      </header>
 
-      <div>
-        <h2>Por que este e-book é para você?</h2>
-        <ul style={doclistStyles}>
-            <li  style={docLinkStyle}>
-              Como montar um currículo atrativo que chame a atenção dos recrutadores
-            </li>
-            <li  style={docLinkStyle}>
-              Dicas práticas para destacar seu LinkedIn
-            </li>
-            <li  style={docLinkStyle}>
-              Estratégias de comunicação para se posicionar com confiança
-            </li>
-            <li  style={docLinkStyle}>
-              Como valorizar habilidades técnicas e comportamentais
-            </li>
-            <li  style={docLinkStyle}>
-              Preparação para entrevistas de emprego
-            </li>
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Por que este e-book é para você?</h2>
+        <ul className="list-disc list-inside space-y-2">
+          <li>Como montar um currículo atrativo que chame a atenção dos recrutadores</li>
+          <li>Dicas práticas para destacar seu LinkedIn</li>
+          <li>Estratégias de comunicação para se posicionar com confiança</li>
+          <li>Como valorizar habilidades técnicas e comportamentais</li>
+          <li>Preparação para entrevistas de emprego</li>
         </ul>
-      </div>
+      </section>
 
-      <div>
-        <h1>Garanta seu acesso exclusivo ao e-book</h1>
-       <Formik
-          initialValues={{ name: "", email: "", phone: "" }}
-          validationSchema={validationSchema}
-          onSubmit={(values) => {
-            // handle form submission here
-            alert(JSON.stringify(values, null, 2))
-          }}
-          validateOnChange={false}
-        >
-          <Form>
-            <label>
-              Name
-              <Field type="text" name="name" id="name" />
-              <ErrorMessage name="name" component="span" />
-            </label>
-            <label>
-              Email
-              <Field type="email" name="email" id="email" />
-              <ErrorMessage name="email" component="span" />
-            </label>
-            <label>
-              WhatsApp
-              <Field name="phone">
-                {({ field }: FieldProps) => (
-                  <InputMask
-                    {...field}
-                    mask="(99) 99999-9999"
-                    placeholder="(99) 99999-9999"
-                    id="phone"
-                    type="text"
-                  />
-                )}
-              </Field>
-            </label>
-            <button style={buttonStyles} type="submit">
-              Quero meu e-book agora
-            </button>
-          </Form>
-        </Formik>
-        
-      </div>
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Garanta seu acesso exclusivo ao e-book</h2>
+        {submitted ? (
+          <div className="bg-green-100 p-4 rounded">
+            Formulário enviado! Em breve você receberá mais informações.
+          </div>
+        ) : (
+          <EbookForm onSuccess={() => setSubmitted(true)} />
+        )}
+      </section>
 
-      <div>
-        <h3>Contato</h3>
+      <footer className="border-t pt-6 text-sm text-center text-gray-600">
+        <h3 className="font-semibold mb-2">Contato</h3>
         <p>devgirlsofc@gmail.com</p>
         <p>Transformamos o setor tech e ampliamos oportunidades para todos!</p>
-      </div>
+      </footer>
     </main>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
-export const Head: HeadFC = () => <title>Impulsione a sua carreira!</title>
+export const Head: HeadFC = () => (
+  <>
+    <title>Impulsione a sua carreira!</title>
+    <meta
+      name="description"
+      content="Baixe seu e-book gratuito e aprenda como destacar seu currículo, LinkedIn e se preparar para entrevistas na área de tecnologia."
+    />
+  </>
+);
