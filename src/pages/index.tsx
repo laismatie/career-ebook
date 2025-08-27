@@ -23,7 +23,7 @@ const IndexPage: React.FC<PageProps> = () => {
       </header>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Por que este e-book é para você?</h2>
+        <h2 className="text-2xl font-semibold mb-4">O que você vai aprender com esse e-book?</h2>
         <ul className="list-disc list-inside space-y-2">
           <li>Como montar um currículo atrativo que chame a atenção dos recrutadores</li>
           <li>Dicas práticas para destacar seu LinkedIn</li>
@@ -60,7 +60,7 @@ export const Head: HeadFC = () => (
     <title>Impulsione a sua carreira!</title>
     <meta
       name="description"
-      content="Baixe seu e-book gratuito e aprenda como destacar seu currículo, LinkedIn e se preparar para entrevistas na área de tecnologia."
+      content="Baixe seu e-book agora e aprenda como destacar seu currículo, LinkedIn e se preparar para entrevistas na área de tecnologia."
     />
   </>
 );
