@@ -1,49 +1,95 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal TypeScript Starter
-</h1>
+# Career Ebook
 
-## 🚀 Quick start
+Um projeto de landing page construído com **Gatsby**, **TypeScript** e **TailwindCSS**, cujo objetivo é oferecer um e-book para ajudar pessoas a impulsionarem suas carreiras na área de tecnologia. A página inclui formulário de captura, seção de vantagens e imagens otimizadas usando `gatsby-plugin-image`.
 
-1.  **Create a Gatsby site.**
+---
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+## 📦 Tecnologias e bibliotecas utilizadas
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
+### **Gatsby**
+- Framework React focado em **performance, SEO e geração de sites estáticos**.
+- Plugins utilizados:
+  - `gatsby-plugin-image`: otimização de imagens (Lazy Loading, responsive images).
+  - `gatsby-plugin-sharp` e `gatsby-transformer-sharp`: processamento de imagens.
+  - `gatsby-source-filesystem`: para ler arquivos do sistema, como imagens.
+  - `gatsby-plugin-postcss`: integração do TailwindCSS com Gatsby.
 
-2.  **Start developing.**
+### **React & TypeScript**
+- `react` e `react-dom` para construir a UI de forma declarativa.
+- `typescript` e `@types/*` para tipagem segura, evitando erros comuns.
 
-    Navigate into your new site’s directory and start it up.
+### **Estilização**
+- **TailwindCSS**: framework utilitário para estilização rápida e responsiva.
+- **Autoprefixer**: adiciona prefixos CSS automaticamente para compatibilidade com navegadores.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+### **Formulários**
+- `formik`: gerenciamento de formulários com validação.
+- `yup`: esquema de validação de dados do formulário.
+- `react-input-mask`: máscara de entrada para campos como WhatsApp.
 
-3.  **Open the code and start customizing!**
+### **Ícones**
+- `react-icons`: biblioteca de ícones (FontAwesome) para redes sociais e elementos visuais.
 
-    Your site is now running at http://localhost:8000!
+---
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+## ⚙️ Estrutura do projeto
 
-4.  **Learn more**
+```text
+career-ebook/
+│
+├─ src/
+│  ├─ components/      # Componentes reutilizáveis (EbookForm, AboutProduct Footer)
+│  ├─ images/          # Imagens utilizadas no site
+│  ├─ pages/           # Páginas (IndexPage)
+│  └─ styles/          # Arquivos CSS globais (Tailwind)
+│
+├─ gatsby-config.js    # Configuração Gatsby + plugins
+├─ postcss.config.js   # Configuração PostCSS/Tailwind
+├─ tailwind.config.js  # Configuração Tailwind
+└─ package.json        # Dependências e scripts
+```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-## 🚀 Quick start (Netlify)
+## 🚀 Scripts disponíveis
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+| Script | Descrição |
+|--------|-----------|
+| `npm run develop` | Inicia o servidor de desenvolvimento com hot reload |
+| `npm run start` | Alias para `develop` |
+| `npm run build` | Gera a versão estática do site para produção |
+| `npm run serve` | Serve a versão buildada localmente |
+| `npm run clean` | Limpa o cache do Gatsby |
+| `npm run typecheck` | Executa verificação de tipos TypeScript sem gerar arquivos |
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+---
+
+## 📑 Funcionalidades
+
+1. **Hero Section** com imagem de fundo e texto chamativo.
+2. **Seção de vantagens** do e-book, mostrando os benefícios.
+3. **Formulário de captura** com validação usando Formik + Yup.
+4. **Imagens otimizadas** com `gatsby-plugin-image`.
+5. **Footer** com contato, redes sociais e botão de CTA.
+6. Layout responsivo **Mobile / Desktop** usando TailwindCSS.
+
+---
+
+## ⚡ Como rodar o projeto localmente
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/career-ebook.git
+cd career-ebook
+```
+2. Instale as dependências:
+
+```bash
+npm install
+```
+3. Rode o servidor de desenvolvimento:
+
+```bash
+npm run develop
+```
+3. Abra no navegador: http://localhost:8000
