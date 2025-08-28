@@ -93,3 +93,7 @@ npm install
 npm run develop
 ```
 3. Abra no navegador: http://localhost:8000
+
+## Landing Page Preview
+
+![Landing page preview](assets/demo.gif)
