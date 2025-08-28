@@ -27,15 +27,24 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
       </header>
 
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">O que você vai aprender com esse e-book?</h2>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Como montar um currículo atrativo que chame a atenção dos recrutadores</li>
-          <li>Dicas práticas para destacar seu LinkedIn</li>
-          <li>Estratégias de comunicação para se posicionar com confiança</li>
-          <li>Como valorizar habilidades técnicas e comportamentais</li>
-          <li>Preparação para entrevistas de emprego</li>
-        </ul>
+      <section className="py-12 bg-purple-800">
+        <h2 className="text-2xl font-semibold text-white text-center mb-4">O que você vai aprender com esse e-book?</h2>
+        <div className="flex justify-center items-center gap-6 md:gap-16 flex-wrap">
+          <StaticImage
+            src="../images/ebook.jpg"
+            alt="Imagem da capa do e-book preto com detalhes em roxo"
+            placeholder="blurred"
+            layout="fullWidth"
+            className="w-60 h-auto rounded-lg"
+          />
+          <ul className="list-disc space-y-2 text-white text-lg">
+            <li>Como montar um currículo atrativo que chame a atenção dos recrutadores</li>
+            <li>Dicas práticas para destacar seu LinkedIn</li>
+            <li>Estratégias de comunicação para se posicionar com confiança</li>
+            <li>Como valorizar habilidades técnicas e comportamentais</li>
+            <li>Preparação para entrevistas de emprego</li>
+          </ul>
+        </div>
       </section>
 
       <section className="mb-12">
