@@ -19,7 +19,7 @@ const IndexPage: React.FC<PageProps> = () => {
           className="inset-0 w-full h-full relative object-cover opacity-80"
         />
 
-        <div className="absolute text-center ml-10 md:ml-20">
+        <div className="absolute text-center px-6 md:ml-20">
           <h1 className="text-white rounded text-2xl bg-black md:text-4xl font-bold p-2">
             Conquiste sua próxima vaga
           </h1>
@@ -32,7 +32,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <AboutProduct />
       
       <section className="py-10 bg-gray-200">
-       <div className="text-center mb-8">
+       <div className="text-center mb-8 px-6 md:px-2">
         <h2 className="text-2xl md:text-3xl font-bold text-purple-900">
           Aprenda as melhores estratégias para conquistar sua próxima vaga
         </h2>

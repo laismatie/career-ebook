@@ -22,26 +22,26 @@ export const AboutProduct = () => (
 
                 <div className="flex-1 space-y-6">
                     <ul className="space-y-4">
-                        <li className="flex items-start gap-3">
-                            <span className="flex items-center justify-center w-7 h-7 bg-white rounded-full text-purple-900 font-bold">
+                        <li className="flex items-start gap-2 md:gap-3">
+                            <span className="flex items-center justify-center w-10 md:w-6 h-6 bg-white rounded-full text-purple-900 font-bold">
                                 ✓
                             </span>
                             <p>Aprenda a criar um currículo que se destaca em meio a centenas de candidatos.</p>
                         </li>
-                        <li className="flex items-start gap-3">
-                            <span className="flex items-center justify-center w-7 h-7 bg-white rounded-full text-purple-900 font-bold">
+                        <li className="flex items-start gap-2 md:gap-3">
+                            <span className="flex items-center justify-center w-10 md:w-6 h-6 bg-white rounded-full text-purple-900 font-bold">
                                 ✓
                             </span>
                             <p>Melhore seu LinkedIn para atrair recrutadores de empresas que você admira.</p>
                         </li>
-                        <li className="flex items-start gap-3">
-                            <span className="flex items-center justify-center w-7 h-7 bg-white rounded-full text-purple-900 font-bold">
+                        <li className="flex items-start gap-2 md:gap-3">
+                            <span className="flex items-center justify-center w-10 md:w-6 h-6 bg-white rounded-full text-purple-900 font-bold">
                                 ✓
                             </span>
                             <p>Ganhe confiança para se sair bem nas entrevistas e negociações salariais.</p>
                         </li>
-                        <li className="flex items-start gap-3">
-                            <span className="flex items-center justify-center w-7 h-7 bg-white rounded-full text-purple-900 font-bold">
+                        <li className="flex items-start gap-2 md:gap-3">
+                            <span className="flex items-center justify-center w-10 md:w-6 h-6 bg-white rounded-full text-purple-900 font-bold">
                                 ✓
                             </span>
                             <p>Descubra os erros que estão te impedindo de avançar na sua carreira.</p>
